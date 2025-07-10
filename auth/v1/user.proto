@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package auth.v1;
+
+option go_package = "github.com/xreyc/grpc-contract/auth/v1;authv1";
+
+service UserService {
+  rpc GetUserDetails(GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+  string username = 1;
+}
+
+message GetUserResponse {
+  string username = 1;
+  string email = 2;
+  string full_name = 3;
+}
